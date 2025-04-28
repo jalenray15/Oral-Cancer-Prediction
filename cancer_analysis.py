@@ -136,6 +136,61 @@ processed_file = 'oral_cancer_processed.csv'
 df.to_csv(processed_file, index=False)
 print(f"\nProcessed data saved to {processed_file}")
 
+# 6. FINAL VALIDATION
+print("\n--- FINAL VALIDATION ---")
+
+# ✔ No missing values remain
+missing_count = df.isnull().sum().sum()
+print(f"✔ Missing values check: {missing_count} missing values remain")
+if missing_count == 0:
+    print("  Validation passed: No missing values in the dataset")
+else:
+    print("  Validation failed: There are still missing values in the dataset")
+
+# ✔ Data types are correct
+print("\n✔ Data type validation:")
+print(df.dtypes)
+# Check if numerical columns are actually numeric
+for col in numeric_cols:
+    if not np.issubdtype(df[col].dtype, np.number):
+        print(f"  Warning: Column {col} should be numeric but is {df[col].dtype}")
+    else:
+        print(f"  Column {col}: Correct type ({df[col].dtype})")
+
+# ✔ No duplicates exist
+duplicate_count = df.duplicated().sum()
+print(f"\n✔ Duplicate records check: {duplicate_count} duplicates found")
+if duplicate_count == 0:
+    print("  Validation passed: No duplicate records")
+else:
+    print("  Validation failed: Duplicate records exist")
+    
+# ✔ No extreme outliers distort results
+print("\n✔ Extreme outlier check:")
+for col in outlier_columns:
+    # Check for values more than 5 standard deviations from the mean
+    mean = np.mean(df[col])
+    std = np.std(df[col])
+    extreme_low = mean - 5*std
+    extreme_high = mean + 5*std
+    extreme_count = len(df[(df[col] < extreme_low) | (df[col] > extreme_high)])
+    print(f"  Column {col}: {extreme_count} extreme outliers (>5 std from mean)")
+    if extreme_count > 0:
+        print(f"    Min: {df[col].min()}, Max: {df[col].max()}, Mean: {mean}, Std: {std}")
+
+# ✔ Text data is formatted correctly
+print("\n✔ Text format validation:")
+for col in categorical_cols:
+    # Check for unexpected lowercase or uppercase values
+    if not all(x.istitle() or not x.isalpha() for x in df[col].dropna().astype(str)):
+        print(f"  Warning: Column {col} may have inconsistent text formatting")
+    else:
+        print(f"  Column {col}: Formatted correctly (Title case)")
+    
+    # Check for leading/trailing whitespace
+    if any(x != x.strip() for x in df[col].dropna().astype(str)):
+        print(f"  Warning: Column {col} has values with leading/trailing whitespace")
+
 # SUMMARY OF TRANSFORMATIONS
 print("\n--- SUMMARY OF DATA PREPARATION STEPS ---")
 print(f"1. Handled missing values in {len(missing_data[missing_data['Missing Values'] > 0])} columns")
@@ -143,6 +198,7 @@ print(f"2. Addressed outliers in {len(outlier_columns)} numerical columns")
 print(f"3. Calculated descriptive statistics using NumPy")
 print(f"4. Created {len(normalize_columns)} normalized feature columns")
 print(f"5. Standardized formats for {len(categorical_cols)} categorical variables")
-print(f"6. Processed dataset shape: {df.shape}")
+print(f"6. Performed final validation checks")
+print(f"7. Processed dataset shape: {df.shape}")
 
 print("\nData preparation complete and ready for analysis or modeling.")
