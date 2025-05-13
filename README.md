@@ -27,17 +27,20 @@ The data preparation process included:
 ## Key Findings
 
 ### 1. Demographics and Distribution
-![Age Distribution](Image%201.png)
+![age_distribution](https://github.com/user-attachments/assets/0415be81-2f3d-4c0b-8070-f02e8336d734)
+
 
 The age distribution shows that the majority of patients in the dataset are between 40 and 70 years old, with a peak around 55-60 years. This suggests that oral cancer risk increases with age, particularly in middle to older adulthood. The median age of patients is 55 years, with cases ranging from 15 to 101 years old.
 
 ### 2. Oral Cancer Diagnosis Distribution
-![Diagnosis Distribution](Image%207.png)
+![diagnosis_distribution_pie](https://github.com/user-attachments/assets/f44740ce-e355-449c-a837-53b62103c4f6)
+
 
 The dataset is remarkably well-balanced, with 49.9% positive oral cancer diagnoses and 50.1% negative cases. This balance enhances the statistical validity of the analyses by ensuring that results aren't skewed by class imbalance.
 
 ### 3. Risk Factor Distribution
-![Risk Factor Distribution](Image%208.png)
+![risk_factors_distribution](https://github.com/user-attachments/assets/d498dbbb-ea70-4808-855f-db968a30b328)
+
 
 The risk factor distribution shows:
 - Tobacco use: Majority of patients (approximately 80%) use tobacco
@@ -48,17 +51,20 @@ The risk factor distribution shows:
 These distributions highlight that tobacco use and alcohol consumption are the most prevalent risk factors in the dataset.
 
 ### 4. Cancer Stage Distribution
-![Cancer Stage Distribution](Image%203.png)
+![cancer_stage_distribution](https://github.com/user-attachments/assets/5a6686b7-de53-4481-9996-cea8e64ee183)
+
 
 The cancer stage distribution shows that many records (stage 0) represent patients without cancer, consistent with our balanced dataset. Among patients with cancer, there's a relatively even distribution across stages 1-3, with fewer cases at stage 4. This allows for meaningful analysis across different stages of disease progression.
 
 ### 5. Relationship Between Age and Tumor Size
-![Age vs Tumor Size](Image%202.png)
+![age_vs_tumor_size](https://github.com/user-attachments/assets/f3a5b803-61aa-4fb1-b247-c5787c3a403d)
+
 
 This scatter plot shows the relationship between patient age and tumor size, colored by diagnosis status. Patients with oral cancer (green) show a range of tumor sizes across all ages, while those without oral cancer (blue) have zero tumor size. Importantly, the plot reveals no clear correlation between age and tumor size, suggesting that age alone isn't a strong predictor of tumor size.
 
 ### 6. Correlation Between Variables
-![Correlation Heatmap](Image%204.png)
+![correlation_heatmap](https://github.com/user-attachments/assets/b1a3a824-a9df-44f9-8977-789b25bbf702)
+
 
 The correlation heatmap reveals several important relationships:
 - Strong negative correlation (-0.99) between cancer stage and 5-year survival rate
@@ -70,7 +76,8 @@ The correlation heatmap reveals several important relationships:
 These relationships confirm that more advanced cancer stages and larger tumors are associated with higher treatment costs and lower survival rates.
 
 ### 7. Relationship Between Tumor Size and Survival Rate
-![Tumor Size vs Survival](Image%209.png)
+![tumor_size_vs_survival](https://github.com/user-attachments/assets/1258855e-c726-4225-a85f-61c3dd92934f)
+
 
 This critical visualization demonstrates the strong relationship between tumor size and 5-year survival rates, stratified by cancer stage. Key observations:
 - Clear horizontal bands corresponding to different cancer stages
@@ -80,7 +87,8 @@ This critical visualization demonstrates the strong relationship between tumor s
 - Cancer stage appears to be the dominant factor in survival predictions
 
 ### 8. Economic Impact by Cancer Stage
-![Cost vs Economic Burden](Image%205.png)
+![cost_vs_burden](https://github.com/user-attachments/assets/52b7dd75-3ef8-4b3d-a9fe-ddf3333f12da)
+
 
 This visualization shows the relationship between treatment costs and economic burden (measured in lost workdays) by cancer stage. Key findings:
 - Later cancer stages are associated with both higher treatment costs and greater productivity losses
@@ -88,7 +96,8 @@ This visualization shows the relationship between treatment costs and economic b
 - The pattern clearly shows that both financial costs and productivity losses increase exponentially with cancer stage
 
 ### 9. Impact of Risk Factors on Tumor Size
-![Tumor Size by Risk Factors](Image%2010.png)
+![tumor_size_by_risk_factors](https://github.com/user-attachments/assets/be5020d4-9b36-41aa-b9fc-bb92e711ec4f)
+
 
 These box plots examine the relationship between each risk factor and tumor size:
 - Surprisingly, there appears to be minimal difference in tumor sizes between those with and without each risk factor
@@ -96,7 +105,8 @@ These box plots examine the relationship between each risk factor and tumor size
 - The analysis implies that early detection, rather than risk factor management, may be more critical for managing tumor size
 
 ### 10. Multiple Risk Factors and Cancer Diagnosis
-![Risk Factors and Diagnosis](Image%206.png)
+![diagnosis_by_risk_count](https://github.com/user-attachments/assets/cad84358-8266-4374-8609-24cf4e39098d)
+
 
 This visualization shows the relationship between the number of risk factors and oral cancer diagnosis. The distribution appears relatively similar between positive and negative diagnoses across different risk factor counts. This suggests that the cumulative number of risk factors alone may not be strongly predictive of diagnosis in this dataset, and that the interaction between specific risk factors may be more important than their simple count.
 
