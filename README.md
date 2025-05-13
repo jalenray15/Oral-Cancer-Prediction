@@ -139,7 +139,7 @@ Additional analysis of combined risk factors (tobacco use with alcohol consumpti
 - **Analysis/**: Python scripts for data analysis
 - **Data/**: Raw and processed datasets
 - **Visualization/**: Generated visualizations and charts
-- **Research Report.pdf**: Detailed findings and methodology
+
 
 ## Technologies Used
 - Python for data processing and analysis
@@ -147,7 +147,4 @@ Additional analysis of combined risk factors (tobacco use with alcohol consumpti
 - Matplotlib and Seaborn for data visualization
 - SciPy for statistical analysis
 
-## Future Research Directions
-- The molecular mechanisms behind the synergistic effects of multiple risk factors
-- Development of personalized risk assessment tools incorporating genetic factors
-- Cost-effectiveness analyses of various screening strategies for high-risk populations
+
